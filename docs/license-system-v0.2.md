@@ -167,6 +167,56 @@ AFL-3.0、Apache-2.0、Artistic-2.0、BSL-1.0、BSD-2-Clause、BSD-3-Clause、BS
 
 来源：https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository#searching-github-by-license-type
 
+## 8.1 GitHub Docs 识别的许可证逐项目录
+
+GitHub Docs 的许可证筛选目录逐项列出如下标识。链接可通过 SPDX 官方标识页核对；家族项链接回 GitHub Docs，因为它们不是单一版本。
+
+| 标识 | 名称 | 资产类型 | 初步适用性 |
+|---|---|---|---|
+| AFL-3.0 | Academic Free License 3.0 | 软件 | 特殊宽松许可，条款较复杂；不作为默认 |
+| Apache-2.0 | Apache License 2.0 | 软件 | 可选；明确专利授权 |
+| Artistic-2.0 | Artistic License 2.0 | 软件 | 特定生态；不作为默认 |
+| BSL-1.0 | Boost Software License 1.0 | 软件 | 宽松，可选 |
+| BSD-2-Clause | BSD 2-Clause | 软件 | 宽松，可选 |
+| BSD-3-Clause | BSD 3-Clause | 软件 | 宽松，可选 |
+| BSD-3-Clause-Clear | BSD 3-Clause Clear | 软件 | 需核对专利条款 |
+| BSD-4-Clause | BSD 4-Clause | 软件 | 旧式广告条款，不推荐新项目 |
+| 0BSD | Zero-Clause BSD | 软件 | 极宽松，须评估免责声明 |
+| CC | Creative Commons family | 内容 | 家族标识，不是单一许可证 |
+| CC0-1.0 | CC0 1.0 | 数据/内容 | 公共领域工具，不是许可证 |
+| CC-BY-4.0 | CC BY 4.0 | 内容 | 研究论文/文档推荐，不用于软件 |
+| CC-BY-SA-4.0 | CC BY-SA 4.0 | 内容 | 文档可选，衍生作品需相同方式共享 |
+| WTFPL | Do What The F*ck You Want To Public License | 软件 | 法律表达有争议，不推荐 |
+| ECL-2.0 | Educational Community License 2.0 | 软件 | 教育场景专用，非默认 |
+| EPL-1.0 | Eclipse Public License 1.0 | 软件 | 弱 copyleft 旧版本 |
+| EPL-2.0 | Eclipse Public License 2.0 | 软件 | 弱 copyleft，可按软件项目评估 |
+| EUPL-1.1 | European Union Public Licence 1.1 | 软件 | 旧版本，注意兼容性 |
+| AGPL-3.0 | GNU AGPL v3 | 软件 | 网络服务场景强 copyleft，不作宽松默认 |
+| GPL | GNU GPL family | 软件 | 家族标识，须选定具体版本 |
+| GPL-2.0 | GNU GPL v2 | 软件 | 强 copyleft |
+| GPL-3.0 | GNU GPL v3 | 软件 | 强 copyleft，含专利/反锁定条款 |
+| LGPL | GNU LGPL family | 软件 | 家族标识，须选定具体版本 |
+| LGPL-2.1 | GNU LGPL v2.1 | 软件 | 弱 copyleft，主要面向库 |
+| LGPL-3.0 | GNU LGPL v3 | 软件 | 弱 copyleft，需核对链接/再分发义务 |
+| ISC | ISC License | 软件 | 简洁宽松，可选 |
+| LPPL-1.3c | LaTeX Project Public License 1.3c | TeX 软件 | 面向 LaTeX 宏包，不是论文 PDF 许可 |
+| MS-PL | Microsoft Public License | 软件 | 需核对具体专利和分发条款 |
+| MIT | MIT License | 软件 | 本社区代码/证明工程首选 |
+| MPL-2.0 | Mozilla Public License 2.0 | 软件 | 文件级 copyleft，可选 |
+| OSL-3.0 | Open Software License 3.0 | 软件 | 强 copyleft，不作默认 |
+| PostgreSQL | PostgreSQL License | 软件 | 宽松，可选 |
+| OFL-1.1 | SIL Open Font License 1.1 | 字体 | 仅用于字体软件/字体文件 |
+| NCSA | University of Illinois/NCSA | 软件 | 宽松，可选 |
+| Unlicense | The Unlicense | 软件 | 公共领域式许可，跨司法辖区效果需评估 |
+| zlib | zlib License | 软件 | 宽松，可选 |
+
+来源：[GitHub Docs license type catalog](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository#searching-github-by-license-type)。这份列表是 GitHub 搜索和识别目录，不等于 GitHub 采用或背书全部条目，也不是 OSI 批准目录。
+
+## 9. CCF 与 OpenI PCL 的许可证边界
+
+- **CCF：**本次未发现对所有 CCF 期刊、会议论文、报告和网站内容统一适用的一份开放许可证。章程与科研伦理规范不是作品许可证。每篇论文应按具体出版物、会议/期刊作者协议、出版商合同和论文页面版权声明判断。
+- **OpenI PCL：**平台承载代码仓库、模型、数据集和协同任务，但不能推定全部项目采用启智开源许可证或木兰-启智模型许可证。每个仓库 LICENSE、模型卡许可、数据集许可和平台服务条款必须分别核对。
+
 ## 9. 其他工具与平台授权（不是作品许可证）
 
 - CC0：公共领域奉献工具。
