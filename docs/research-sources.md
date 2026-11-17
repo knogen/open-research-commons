@@ -72,3 +72,8 @@
 - OSI Approved Licenses 数据库：https://opensource.org/licenses
 
 注意：GitHub 的 license identifier 列表是平台识别/搜索目录，不等于 GitHub 采用或背书所有许可证。OSI Approved 目录与 GitHub 识别目录也不是同一集合。
+
+## CC 许可使用边界补充
+- Creative Commons License Chooser（明确不推荐将 CC 许可用于软件/硬件）：https://creativecommons.org/chooser/
+- Creative Commons FAQ（CC0 是 public domain dedication，不是 license）：https://creativecommons.org/faq/
+- 快照：S34–S35。
