@@ -6,7 +6,7 @@
 
 - 参考档案：arXiv、OpenI、OpenI PCL、ChinaXiv、CCF、GitHub、Wikipedia/Wikimedia。
 - 原文快照：docs/snapshots/2026-11-17-excerpts.md，包含短摘录、原文链接、段落定位、采集日期和使用边界。
-- 宪章：docs/constitution-v0.2.md，每章逐段引用原始制度条款，并解释借鉴原因及不采纳的差异。
+- 宪章：docs/constitution-v0.2.md（段落级来源引用）\n- 许可证制度：docs/license-system-v0.1.md\n- 历史版本：docs/constitution-v0.1.md，每章逐段引用原始制度条款，并解释借鉴原因及不采纳的差异。
 - 许可证：代码倾向 MIT；论文/文档倾向 CC BY 4.0；数据按权利状态选择 CC0/CC BY；平台存档授权独立于作品许可。
 - 验证：V0–V4 描述验证工件，不将等级冒充统一概率置信度。
 
