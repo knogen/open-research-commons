@@ -5,15 +5,18 @@
 ## 当前版本 v0.2
 
 - 参考档案：arXiv、OpenI、OpenI PCL、ChinaXiv、CCF、GitHub、Wikipedia/Wikimedia。
-- 原文快照：docs/snapshots/2026-11-17-excerpts.md，包含短摘录、原文链接、段落定位、采集日期和使用边界。
-- 宪章：docs/constitution-v0.2.md（段落级来源引用）\n- 许可证制度：docs/license-system-v0.2.md（CC 六种许可、arXiv/ChinaXiv/OpenI/Wikimedia/GitHub 逐项目录与适用性评估）\n- 历史许可草案：docs/license-system-v0.1.md\n- 历史版本：docs/constitution-v0.1.md，每章逐段引用原始制度条款，并解释借鉴原因及不采纳的差异。
-- 许可证：代码倾向 MIT；论文/文档倾向 CC BY 4.0；数据按权利状态选择 CC0/CC BY；平台存档授权独立于作品许可。
-- 验证：采用文字型核验状态与可并列证据标签，不使用 V1/V2 数字编号，避免与 arXiv 论文版本号混淆。
+- 原文快照：`docs/snapshots/2026-11-17-excerpts.md`，包含制度与许可证短摘录、来源链接、段落定位、采集日期和使用边界。
+- 宪章：`docs/constitution-v0.2.md`（段落级来源引用）。
+- 许可证制度：`docs/license-system-v0.2.md`（CC 六种许可、arXiv/ChinaXiv/OpenI/Wikimedia/GitHub 逐项目录与适用性评估）。
+- 历史许可草案：`docs/license-system-v0.1.md`。
+- 历史宪章：`docs/constitution-v0.1.md`。
+- 验证：采用文字型核验状态与可并列证据标签，不使用与 arXiv 论文版本号相似的数字编号。
 
 ## 页面功能
 
 - 参考站点独立页面：展示原文短摘录、来源定位和原始链接。
 - 宪章逐章展示段落级引用、制定原因和可选讨论分支。
+- 许可证页面逐项列出 CC 六种标准许可、各参考系统实际列出的许可、GitHub 可识别许可证目录及本社区适用性判断。
 - 宪章及许可证页面提供“打印 / 导出 PDF”按钮，使用浏览器打印对话框保存为 PDF。
 - 第三方原文链接始终指向原始发布机构。
 
@@ -33,4 +36,4 @@
 
 网站源代码见 `LICENSE`（MIT）。本项目原创研究文档拟采用 CC BY 4.0，见 `LICENSE-DOCS.md`。第三方章程、政策、服务条款和百科内容保留原有版权及许可；本仓库仅保存必要短摘录、引用定位与链接，不对第三方原文重新授权。
 
-宪章为讨论稿，不构成法律意见。正式实施前应核验各来源最新版本并进行法律审查。
+宪章与许可证制度均为讨论稿，不构成法律意见。正式采用前应核验各来源最新版本、兼容性和适用司法辖区。
