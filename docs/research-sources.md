@@ -51,3 +51,24 @@
 - [CC BY-SA 4.0 Legal Code](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en)。
 - [CC0 1.0 Legal Code](https://creativecommons.org/publicdomain/zero/1.0/legalcode.en)。
 - 快照：S14–S17。许可原文快照只保留必要条款摘录，完整法律文本始终链接至 Creative Commons / OSI 原站。
+
+## 许可证目录扩展（2026-11-17）
+- Creative Commons 六种标准许可及 CC0 / Public Domain Mark：https://creativecommons.org/share-your-work/use-remix/cc-licenses/
+- CC BY 4.0 Legal Code：https://creativecommons.org/licenses/by/4.0/legalcode.en
+- CC BY-SA 4.0 Legal Code：https://creativecommons.org/licenses/by-sa/4.0/legalcode.en
+- CC BY-ND 4.0 Legal Code：https://creativecommons.org/licenses/by-nd/4.0/legalcode.en
+- CC BY-NC 4.0 Legal Code：https://creativecommons.org/licenses/by-nc/4.0/legalcode.en
+- CC BY-NC-SA 4.0 Legal Code：https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en
+- CC BY-NC-ND 4.0 Legal Code：https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.en
+- CC0 1.0 Legal Code：https://creativecommons.org/publicdomain/zero/1.0/legalcode.en
+- arXiv 实际可选许可清单（含 arXiv perpetual non-exclusive license 与 metadata CC0）：https://info.arxiv.org/help/license/index.html
+- ChinaXiv 实际许可选项与平台授权：https://cgg.chinaxiv.org/user/license.htm?locale=en
+- OpenI 启智开源许可证 1.1：https://www.openi.org.cn/opensource-license/
+- OpenI 木兰-启智模型许可证（2023-12）：https://openi.org.cn/html/2023/licence_1215/687.html
+- OpenI 木兰许可证族介绍：https://www.openi.org.cn/html/2023/dongtai_0814/690.html
+- MulanPSL v2 OSI 记录：https://opensource.org/license/MulanPSL-2.0
+- Wikimedia Foundation Terms of Use §7（CC BY-SA 4.0 + GFDL）：https://foundation.wikimedia.org/wiki/Terms_of_Use#7._Licensing_of_Content
+- GitHub Docs 识别的许可证目录：https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository#searching-github-by-license-type
+- OSI Approved Licenses 数据库：https://opensource.org/licenses
+
+注意：GitHub 的 license identifier 列表是平台识别/搜索目录，不等于 GitHub 采用或背书所有许可证。OSI Approved 目录与 GitHub 识别目录也不是同一集合。
