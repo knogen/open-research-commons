@@ -7,7 +7,7 @@
 - 参考档案：arXiv、OpenI、OpenI PCL、ChinaXiv、CCF、GitHub、Wikipedia/Wikimedia。
 - 原文快照：`docs/snapshots/2026-11-17-excerpts.md`，包含制度与许可证短摘录、来源链接、段落定位、采集日期和使用边界。
 - 宪章：`docs/constitution-v0.2.md`（段落级来源引用）。
-- 许可证制度：`docs/license-system-v0.2.md`（CC 六种许可、arXiv/ChinaXiv/OpenI/Wikimedia/GitHub 逐项目录与适用性评估）。
+- 许可证制度：`docs/license-system-v0.2.md`（CC 六种许可、arXiv/ChinaXiv/OpenI/CCF/PCL/Wikimedia/GitHub 逐项目录与适用性评估）。
 - 历史许可草案：`docs/license-system-v0.1.md`。
 - 历史宪章：`docs/constitution-v0.1.md`。
 - 验证：采用文字型核验状态与可并列证据标签，不使用与 arXiv 论文版本号相似的数字编号。
