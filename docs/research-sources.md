@@ -44,3 +44,10 @@
 
 ## 快照版权边界
 本项目保存必要范围的原文短摘录与段落定位，不镜像第三方受版权保护的完整制度文件。Wikipedia/Wikimedia 内容遵循 CC BY-SA 4.0/GFDL 的相应署名与许可要求。第三方原文不受本仓库 MIT/CC BY 声明重新授权。
+
+## 许可证法律文本
+- [MIT License（OSI）](https://opensource.org/license/mit)；本项目文本见 [LICENSE](../LICENSE)。
+- [CC BY 4.0 Legal Code](https://creativecommons.org/licenses/by/4.0/legalcode.en)。
+- [CC BY-SA 4.0 Legal Code](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en)。
+- [CC0 1.0 Legal Code](https://creativecommons.org/publicdomain/zero/1.0/legalcode.en)。
+- 快照：S14–S17。许可原文快照只保留必要条款摘录，完整法律文本始终链接至 Creative Commons / OSI 原站。
