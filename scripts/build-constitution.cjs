@@ -8,11 +8,21 @@ vm.runInContext(fs.readFileSync(path.join(root, 'assets/constitution-data.js'), 
 const d = ctx.data;
 const repo = 'https://github.com/knogen/open-research-commons';
 const proposal = id => d.proposals.find(p => p.number === id);
-const proposalLine = p => '- [Issue #' + p.number + ' · ' + p.title + '](' + p.url + ')：' + p.adoptionSummary + '（v' + p.adoptedVersion + ' 已采纳）' + (p.revisionNote ? '  \n  本版说明：' + p.revisionNote : '');
+const proposalLine = (p, relation) => '- [Issue #' + p.number + ' · ' + p.title + '](' + p.url + ')：' + relation + '（v' + p.adoptedVersion + ' 已采纳）';
+// Keep the chapter references and appendix index in agreement.
+for (const p of d.proposals) {
+  const actual = d.articles.flatMap((a, i) => a.proposalIds.includes(p.number) ? [i + 1] : []);
+  if (JSON.stringify(actual) !== JSON.stringify(p.articleNumbers)) throw new Error('Inconsistent chapter index for issue #' + p.number);
+}
+for (const a of d.articles) {
+  for (const id of a.proposalIds) {
+    if (!proposal(id) || !a.proposalRelations?.[id]) throw new Error('Missing chapter-specific relation for issue #' + id);
+  }
+}
 let md = '# ' + d.title + '\n\n版本日期：' + d.date + '（北京时间）。\n\n**版本状态：** ' + d.status + '\n\n**本次修订依据：** ' + d.issuePriority + '\n\n**修订基线：** [`' + d.baselineCommit.slice(0,7) + '`](' + repo + '/commit/' + d.baselineCommit + ')。  \n**回退分支：** [`' + d.archiveBranch + '`](' + repo + '/tree/' + d.archiveBranch + ')。\n\n编辑稿转录与源文件校验值见[编辑修订稿原文](proposals/2026-11-18-edited-draft.md)。仅将第十章标题中的“宪法”统一为“宪章”；其余正文和括注依源稿保留。\n\n' + d.evidenceNote + '\n\n配套文档：[核验规范 v0.4](verification-labels-v0.4.md)、[许可制度与目录 v0.3](license-system-v0.3.md)。外部来源及原文摘录沿用既有档案。\n\n';
 for (const a of d.articles) {
   md += '## ' + a.title + '\n\n' + a.text + '\n\n';
-  if (a.proposalIds.length) md += '### 采纳提案\n\n' + a.proposalIds.map(id => proposalLine(proposal(id))).join('\n') + '\n\n';
+  if (a.proposalIds.length) md += '### 采纳提案\n\n' + a.proposalIds.map(id => proposalLine(proposal(id), a.proposalRelations[id])).join('\n') + '\n\n';
   md += '### 制定原因\n\n' + a.reason + '\n\n';
   if (a.revisionNote) md += '**本版说明：** ' + a.revisionNote + '\n\n';
   if (a.refs.length) md += '### 外部制度比较参考\n\n' + a.refs.map(c => '- [' + c[0] + '](' + c[3] + ')：' + c[1]).join('\n') + '\n\n';
