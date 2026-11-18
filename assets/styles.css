@@ -14,3 +14,7 @@
 @media(max-width:800px){.proposal-quote{padding:17px}.document-body h1{font-size:27px}.printbar{gap:10px}.printbar span{max-width:60%}.version-links{gap:12px}.proposal-body{padding-left:12px}}
 @media print{.article-doc{break-inside:auto!important}.article-doc h2,.article-doc h3,.document-body h2,.document-body h3{break-after:avoid}.proposal-quote{break-inside:avoid-page}.document-body pre{background:#fff!important;border:1px solid #ccc}.document-body{max-width:none}.version-links a,.document-body a,.proposal-quote a{color:#111}.document-body thead{display:table-header-group}}
 
+
+/* Historical drafting evidence remains readable in screen and print views. */
+del { text-decoration: line-through; }
+.revision-note { font-size: .94em; line-height: 1.75; }

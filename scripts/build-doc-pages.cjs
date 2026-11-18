@@ -4,16 +4,16 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const root = path.resolve(__dirname, '..');
-const version = '0.3';
+const version = '0.4';
 const sources = {
   licenses: 'docs/license-system-v0.3.md',
-  verification: 'docs/verification-labels-v0.3.md',
+  verification: 'docs/verification-labels-v0.4.md',
   versions: 'docs/version-history.md',
 };
 const routes = {
-  'docs/constitution-v0.3.md': '#/constitution',
+  'docs/constitution-v0.4.md': '#/constitution',
   'docs/license-system-v0.3.md': '#/licenses',
-  'docs/verification-labels-v0.3.md': '#/verification',
+  'docs/verification-labels-v0.4.md': '#/verification',
   'docs/version-history.md': '#/versions',
 };
 const escapeHtml = value => String(value).replace(/[&<>"']/g, ch => ({
@@ -42,7 +42,7 @@ async function main() {
       },
     } });
     const html = parser.parse(markdown).replaceAll('<table>', '<div class="tablewrap"><table>').replaceAll('</table>', '</table></div>');
-    pages[key] = { source, html };
+    pages[key] = { source, version: markdown.match(/^# .*?v(\d+\.\d+)/m)?.[1] || version, html };
   }
   fs.writeFileSync(path.join(root, 'assets/document-content.js'),
     '// Generated from the current Markdown documents by scripts/build-doc-pages.cjs.\n' +
