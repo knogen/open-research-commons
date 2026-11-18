@@ -1,0 +1,357 @@
+# 社区许可规则与参考许可证目录 v0.3
+
+状态：v0.3 当前社区许可规则与参考目录。修订日期：2026-11-18。  
+采用决定：根据 [Issue #4](https://github.com/knogen/open-research-commons/issues/4)，社区对提交者有权授权的论文、代码、证明文件及其他原创材料统一采用 **MIT**。  
+目录原则：继续逐一保留 CC 六种标准许可和各参考系统的许可证；未被本社区采用的许可也列出适用对象和限制。目录中的“参考”“第三方许可”不构成本社区当前原创投稿的另一条默认或可选许可路线。  
+来源记录：原目录来自 2026-11-17 的研究与[快照集 S18–S36](snapshots/2026-11-17-excerpts.md)；本次另核对 MIT 标准全文及 CC BY 4.0 的既有授权条款。保留[历史 v0.2](license-system-v0.2.md)，不改写其当时的建议。
+
+## 0. 当前采用：统一 MIT，并逐项说明许可范围
+
+### 0.1 谁授权、授权哪些内容
+
+作者或其他实际版权人保留其依法享有的权利。提交者须有权授予 MIT 许可，并注明实际版权人、适用版本、许可覆盖的文件或段落，以及不在该许可范围内的第三方材料。社区接收投稿不构成版权转让；“作者”“提交者”“版权人”可能不是同一主体，应分别记录。
+
+本社区把统一 MIT 规则明确应用于可授权的论文、研究报告、代码、证明文件、原创图表和其他原创配套材料。对于论文等非软件材料，成果页面与下载包也须明确写出 MIT 覆盖哪些内容，不仅在代码仓库放置一个未说明范围的 LICENSE。使用未改写的 MIT 标准文本；这里的材料范围说明不增加非商业、禁止改编或相同方式共享等条件。
+
+### 0.2 公众权利与社区保留信息
+
+公众可依照 MIT 使用、复制、修改、合并、出版、分发、再许可或出售其覆盖的内容；分发副本或实质性部分时应保留原版权声明和许可声明。完整文本还包含不提供保证及作者、版权人的责任限制，见[仓库 LICENSE](../LICENSE)与本文件附录。MIT 不要求衍生作品必须继续采用 MIT，也不禁止商业再利用。[依据：MIT 标准文本](https://opensource.org/license/mit)。
+
+社区在成果页面和版本记录中保留作者、实际版权人、版本号、发布日期、永久链接或标识符及建议引用格式。保留这些学术元数据是社区的发表与追溯规则；不能把建议引用格式或新增的修改标示要求冒充标准 MIT 对所有下游使用者施加的条件。
+
+### 0.3 不同资产怎样标明范围
+
+| 资产 | 当前统一规则 | 必须单独处理的边界 |
+|---|---|---|
+| 论文、研究报告、说明文档、原创图表 | 提交者有权授权的原创部分采用 MIT | 摘引、转载图表、出版社排版版本、共同作者或雇主权利须逐项确认；不得一并改标 MIT |
+| 代码、脚本、工具 | 可授权的原创部分采用 MIT | 第三方依赖保留其许可；核对链接、组合和再分发义务，不保证所有依赖都能与 MIT 发布方式兼容 |
+| Lean、Coq 等证明文件及检查脚本 | 可授权的原创部分采用 MIT | 导入的证明库、工具链和数据按各自许可；标出本项目文件与依赖的边界 |
+| 数据集与元数据 | 可授权的原创表达、整理或附带代码按明确范围采用 MIT | 事实、公共领域数据不能凭标签产生版权；单独核对数据库特殊权利、个人信息、保密及第三方来源，MIT 标签不替代这些授权 |
+| 模型权重及模型配套材料 | 仅对实际有权按 MIT 授权的原创材料适用统一规则 | 上游模型、衍生限制、训练数据、专利及合同义务须分别核查；无法按 MIT 授权的部分应明确排除并保留原条件，不能仅改名为 MIT |
+| 第三方引文、图像、字体、数据、模型与其他依赖 | 不由社区统一改授 MIT | 注明来源、原许可和可公开的权利依据；不能满足公开条件的材料不得因投稿而自动公开 |
+| 不受版权保护的事实、思想及其他材料 | 如实标识其状态 | 不用 MIT 标记虚构排他权，也不承诺 AI 生成材料必然存在可授权版权 |
+
+第三方材料能否与投稿一同公开，要按原有条件和实际使用方式核查。仅以 CC BY、CC BY-SA、GPL 等许可取得材料，不等于获得删除原声明并将整份材料纯粹改授 MIT 的权利。许可冲突未解决时，应调整材料范围、改为合法引用或链接、取得额外授权，或先移除冲突材料。
+
+### 0.4 投稿及成果页面必须提供的信息
+
+1. 作品标题、作者与贡献记录、提交者及实际版权人；多人或机构持权时说明授权范围。
+2. 作品版本、日期、文件或内容清单，以及 MIT 覆盖范围；排除项应能定位到具体文件、图表、数据或段落。
+3. 覆盖材料的版权声明、`MIT` 标识和 MIT 许可证全文；下载包应一并提供这些声明。
+4. 第三方材料的来源、作者或版权人、适用许可、版本和公开依据；需要保留的许可与免责通知应随材料提供。
+5. 成果永久链接或标识符及建议引用格式，使读者能引用准确版本。
+
+每个成果页的声明可以写为：“除下列第三方材料外，本成果版本〔版本〕中的〔文件或内容范围〕由〔实际版权人〕按 MIT 授权。第三方材料及其许可：〔逐项清单〕。”这只是范围说明模板，须填写真实信息，并附完整 MIT 文本。
+
+### 0.5 历史版本与已有授权
+
+v0.1/v0.2 文档及其许可记录保留。对先前已经按 CC BY 4.0 获得授权且遵守条款的使用者，本次改用 MIT 不撤销既有权利；停止分发或另行提供许可也不会终止已授予的 CC BY 许可。只有有权授权的人才能对旧材料增加 MIT 授权，不能把社区新规则当作全体第三方的重新授权。[依据：CC BY 4.0 §2(a)(1)、§6(c)](https://creativecommons.org/licenses/by/4.0/legalcode.en)。
+
+### 0.6 平台处理与其他权利
+
+平台存档、展示、索引和格式转换的运行规则应说明处理范围和版本记录方式。对明确按 MIT 发布的原创材料，不能再宣称复制、修改或商业使用一概需要额外版权许可。若社区选择“经另行同意才主动用于模型训练”的运营承诺，应明确其约束平台自身，不把它写成对公众既有 MIT 或 CC 权利的新增限制。第三方材料、隐私、专利、商标、保密及合同问题仍需按实际情况处理；MIT 没有替提交者解决这些事项。
+
+## 1. 先区分五类法律工具
+
+1. 作品许可证：决定第三方可如何复制、修改、分发某个作品。
+2. 平台存档授权：作者向预印本平台授予存储、展示和分发权。
+3. 模型许可证：处理模型权重、衍生模型、补充材料等特定资产。
+4. 贡献者协议（CLA/DCO）：处理贡献者向项目提交代码/内容时的权利确认和授权。
+5. 公共领域工具：CC0 尽可能放弃版权及相关权利；Public Domain Mark 仅标识已经处于公共领域的作品。
+
+平台列出或接受某许可，不代表所有托管内容都自动采用该许可。
+
+## 2. Creative Commons 六种标准许可
+
+本章保留 CC 的完整比较资料，用于识别第三方内容和理解历史版本。**CC BY、CC BY-SA 及其他 CC 许可均不替代 v0.3 对可授权原创投稿统一采用 MIT 的规则。** 许可允许什么与社区当前采用什么应分别阅读。
+
+CC 的四个要素：
+
+- BY：署名；
+- SA：相同方式共享；
+- NC：非商业性使用；
+- ND：禁止演绎。
+
+| 许可 | 商业使用 | 改编/翻译 | 衍生作品许可 | 本社区当前判断 |
+|---|---|---|---|---|
+| CC BY 4.0 | 允许 | 允许 | 不强制同许可 | 参考及第三方许可；当前原创投稿采用 MIT |
+| CC BY-SA 4.0 | 允许 | 允许 | 相同许可要素/兼容许可 | 第三方内容保留 SA 条件，不能直接改授纯 MIT |
+| CC BY-ND 4.0 | 允许 | 不允许分享改编作品 | 无改编分享 | 不适合本社区统一规则；第三方材料需核查改编分享限制 |
+| CC BY-NC 4.0 | 不允许 | 允许非商业改编 | 不强制同许可 | 不适合本社区统一规则；第三方材料需核查商业使用限制 |
+| CC BY-NC-SA 4.0 | 不允许 | 允许非商业改编 | 相同许可要素/兼容许可 | 不适合本社区统一规则；第三方材料有 NC 与 SA 条件 |
+| CC BY-NC-ND 4.0 | 不允许 | 不允许分享改编作品 | 无改编分享 | 不适合本社区统一规则；第三方材料同时限制商业使用与改编分享 |
+
+| 许可 | 官方说明页（deed） | 完整法律文本（legal code） |
+|---|---|---|
+| CC BY 4.0 | [说明页](https://creativecommons.org/licenses/by/4.0/) | [法律文本](https://creativecommons.org/licenses/by/4.0/legalcode.en) |
+| CC BY-SA 4.0 | [说明页](https://creativecommons.org/licenses/by-sa/4.0/) | [法律文本](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en) |
+| CC BY-ND 4.0 | [说明页](https://creativecommons.org/licenses/by-nd/4.0/) | [法律文本](https://creativecommons.org/licenses/by-nd/4.0/legalcode.en) |
+| CC BY-NC 4.0 | [说明页](https://creativecommons.org/licenses/by-nc/4.0/) | [法律文本](https://creativecommons.org/licenses/by-nc/4.0/legalcode.en) |
+| CC BY-NC-SA 4.0 | [说明页](https://creativecommons.org/licenses/by-nc-sa/4.0/) | [法律文本](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en) |
+| CC BY-NC-ND 4.0 | [说明页](https://creativecommons.org/licenses/by-nc-nd/4.0/) | [法律文本](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.en) |
+
+### 2.1 CC BY 4.0 详细条款
+
+**允许的行为**
+
+- 在任何媒介和格式复制、发行、展示和传播。
+- 翻译、改写、节选、注释、汇编、改编和再创作。
+- 商业与非商业使用，包括商业出版、企业研发和商业数据库。
+- 在遵守许可条件时，全球范围、免版税、非独占、不可撤销地使用作品。
+
+**公开分享时的署名与标示义务（§3(a)）**
+
+1. 保留许可方随材料提供的作者及指定署名对象、版权声明、许可声明和免责声明通知；在合理可行范围内保留作品来源 URI 或链接。
+2. 明示材料按 CC BY 4.0 许可，并提供许可链接或许可文本。
+3. 标明是否修改原作品，并保留既往修改标示；翻译、改编、节选等应说明。
+4. 可根据媒介、方式和分享情境，以合理方式履行上述义务，例如链接到含完整署名信息的页面。
+5. 许可方要求移除其署名等识别信息时，应在合理可行范围内执行。
+
+这些署名与标示条件以公开分享为触发点，不等于私人使用者必须公开发布署名。另须遵守许可的其他条款：不得暗示原作者或许可方背书；不得对许可材料施加限制后续接收者行使许可权利的额外法律条款或有效技术措施。公开分享自己的改编时，其适用许可不得妨碍接收者遵守原 CC BY 条件。
+
+**权利边界**
+
+- 不自动授予专利权、商标权、隐私权、肖像权或其他独立权利。
+- 不保证上传者拥有所有第三方图像、数据、字体、代码和引文材料的授权。
+- CC BY 4.0 的授权范围包括许可方有权授权的著作权及类似权利，在适用地区可包括数据库特殊权利；但不授予许可方无权授权的第三方数据库权利，也不替代隐私、个人信息、保密、合同、专利和商标等其他权利。
+- CC BY 不要求改编作品继续采用 CC BY；相同方式共享是 CC BY-SA 的要求。
+- 若使用不涉及受保护权利，或已属于适用的法定例外与限制，无需借助 CC 许可；许可不能给这类使用增加条件。
+
+**不可撤销性**
+
+对遵守许可条款的用户，已授予许可不可任意撤销。作者可以停止未来传播，但不能通过删除网页使既有合规授权自动失效。
+
+**违反条款与恢复（§6）**
+
+不遵守许可条件会导致该使用者的许可权利自动终止。若在发现违规后 30 日内纠正，可按 §6(b) 自动恢复；许可方也可明确恢复。恢复不抹去对既往违规可能采取的救济。
+
+**AI 训练**
+
+CC BY 允许的复制、改编和商业使用范围可能覆盖部分机器学习训练或数据处理活动，但不能把它理解为对所有 AI 训练场景的无条件授权。仍须判断版权范围、第三方权利、隐私、数据库、合同及适用的文本数据挖掘规则。平台可另行承诺自己的训练处理方式，但不能把该承诺当作对所有接收者已获 CC BY 权利的新增限制；法定例外也不因许可标签而消失。
+
+**识别第三方许可时使用完整标识**
+
+`Creative Commons Attribution 4.0 International (CC BY 4.0)`，不要只写“CC BY”。
+
+本节依据：[CC BY 4.0 法律文本 §§2–6](https://creativecommons.org/licenses/by/4.0/legalcode.en)、[CC 官方 FAQ](https://creativecommons.org/faq/)。这份详细说明供引用和再利用第三方 CC BY 材料时参考，不改变本社区的统一 MIT 规则。
+
+### 2.2 其他五种 CC 许可的适用性
+
+- CC BY-SA：要求分享改编材料时遵守相同方式共享；本社区引用或整合这类第三方内容时须评估兼容性，不能用 MIT 总标签覆盖其原条件。
+- CC BY-ND：允许传播未改编作品，但不允许分享改编材料；第三方翻译或改编的公开分享需另有依据，不适合本社区统一 MIT 的再利用目标。
+- CC BY-NC：允许非商业改编，但限制商业研究和商业再利用；NC 边界可能产生争议。
+- CC BY-NC-SA：同时限制商业使用并要求相同方式共享，进一步缩小再利用范围。
+- CC BY-NC-ND：只允许非商业分享未改编原作，是六种标准 CC 许可中限制最多的一种。
+
+### 2.3 CC0 与 Public Domain Mark
+
+- CC0 1.0：公共领域奉献工具，尽可能放弃版权及相关权利；§3 在权利放弃无效的范围内设有兜底公共许可。本社区保留第三方 CC0 材料的原有状态，不以 MIT 标签收回已放弃的权利；仍须检查隐私、肖像、专利、商标及第三方权利。
+- Public Domain Mark：仅标识已处于公共领域的作品，不是许可，也不能代替权利人作放弃声明。
+
+原文：[CC0 1.0 法律文本](https://creativecommons.org/publicdomain/zero/1.0/legalcode.en)、[Public Domain Mark](https://creativecommons.org/publicdomain/mark/1.0/)。
+
+### 2.4 CC 不推荐用于软件
+
+Creative Commons 不推荐将其版权许可用于计算机软件或硬件。MIT、Apache 2.0、BSD、MulanPSL 等属于软件许可比较对象；本社区当前对可授权的原创代码和证明工程统一采用 MIT，对论文等原创材料也按第 0 节的明确范围声明采用 MIT。第三方 CC 内容仍按其自身许可处理。[来源：CC 许可选择器](https://creativecommons.org/chooser/)。
+
+## 3. arXiv 列出的论文许可（参考系统目录）
+
+arXiv 官方页面列出：
+
+1. CC BY 4.0；
+2. CC BY-SA 4.0；
+3. CC BY-NC-SA 4.0；
+4. CC BY-NC-ND 4.0；
+5. arXiv.org perpetual, non-exclusive license 1.0；
+6. CC0。
+
+arXiv 另规定全部元数据适用 CC0 1.0。元数据许可不等于论文全文许可。arXiv 允许不同论文版本使用不同许可，但每个版本的许可选择不可撤销。
+
+本社区判断：
+
+- CC BY：第三方或历史内容许可；保留其署名和许可义务，不作为当前原创投稿许可。
+- CC BY-SA：第三方内容许可；注意相同方式共享与组合材料的兼容性，不改授纯 MIT。
+- CC BY-NC-SA / CC BY-NC-ND：保留在目录；商业使用和改编分享限制不符合本社区统一规则，引用或再利用须按原条件处理。
+- arXiv perpetual non-exclusive：平台分发授权研究对象，不是向所有人授予 MIT 权利的依据。
+- CC0：保留第三方元数据或其他材料的公共领域奉献状态，不以 MIT 标签制造原本不存在的限制。
+
+来源：[arXiv License Information](https://info.arxiv.org/help/license/index.html)
+
+## 4. ChinaXiv 实际列出的许可与授权
+
+ChinaXiv 要求投稿者选择：
+
+- 授予 ChinaXiv 非独占、不可撤销的永久分发许可；或
+- 声明作品采用 CC BY 4.0、CC BY-SA 4.0、CC BY-NC-SA 4.0、CC0 1.0 之一；
+- 如需其他 CC 许可，可在投稿流程选择 other 并在论文中注明。
+
+本社区判断：
+
+- 平台非独占分发授权：可研究存档处理边界；不能替代对公众明确授予的 MIT 权利。
+- CC BY：第三方内容按原许可再利用；不作为当前原创投稿许可。
+- CC BY-SA：第三方内容保留其条件，不能统一重标为 MIT。
+- CC BY-NC-SA：不适合本社区统一规则；第三方使用仍受 NC 与 SA 条件约束。
+- CC0：保留第三方数据/元数据的原有状态。
+- 其他 CC 许可：逐项记录第三方的实际版本及条件，不视为本社区当前原创投稿的可选路线。
+
+来源：[ChinaXiv License Information](https://cgg.chinaxiv.org/user/license.htm?locale=en)
+
+## 5. OpenI 启智社区许可证
+
+### 5.1 启智开源许可证 1.1（2019）
+
+适用软件源代码和可执行代码。再分发需保留许可证条件、声明和免责声明；商业目的使用/再发布前需登记相关信息；另设自愿专利声明与商业专利许可选项。
+
+判断：不适合作为本社区统一许可。商业登记和专利条件增加使用者义务；仍保留为参考案例。第三方采用此许可的软件须按其原有条款核查，不能直接改标 MIT。
+
+来源：[启智开源许可证 1.1](https://www.openi.org.cn/opensource-license/)
+
+### 5.2 木兰-启智模型许可证（2023-12）
+
+适用模型、衍生模型及补充材料，如模型结构、参数、权重、部署代码等。不得自动扩展到训练数据资源和算法源代码。
+
+主要特点：版权与专利许可、专利诉讼触发的专利授权终止机制、无商标许可、再分发声明和归属建议。
+
+判断：作为第三方模型许可和比较研究对象保留，不作为本社区对可授权原创材料统一 MIT 的替代选项。不得把采用此许可的模型、训练数据和代码一起改标 MIT；须分别核对资产范围及上游权利。
+
+来源：[木兰-启智模型许可证正式页面](https://openi.org.cn/html/2023/licence_1215/687.html)
+
+历史对照：[2023-06 测试版](https://openi.org.cn/html/2023/licence_0628/687.html)。
+
+## 6. 木兰许可证族（OpenI 合作生态相关，不等同于 OpenI 平台统一许可）
+
+- MulanPSL v1：宽松软件许可旧版本；保留为第三方遗留项目许可。
+- MulanPSL v2：宽松软件许可，含版权与专利授权，OSI 已批准；作为第三方软件许可和比较对象，不作为当前原创投稿的另一默认许可。
+- MulanPubL v1：强互惠软件许可旧版本；第三方材料保留原许可，不适合以 MIT 覆盖。
+- MulanPubL v2：强互惠软件许可，分发衍生作品需履行相应源码和同许可义务；第三方材料须核对兼容性，不能直接改标 MIT。
+- MBODL v1：木兰-白玉兰开放数据许可协议，面向开放数据集；第三方数据按具体条款处理。
+- Mulan OWL：木兰开放作品许可证；保留为研究条目，实际使用第三方材料前须核对正式文本和适用范围。
+
+来源：[OpenI 木兰许可证族说明](https://www.openi.org.cn/html/2023/dongtai_0814/690.html)、[MulanPSL v2 OSI 记录](https://opensource.org/license/MulanPSL-2.0)
+
+## 7. Wikipedia / Wikimedia
+
+Wikimedia 的一般规则要求贡献者对其自己拥有版权的文本授予 CC BY-SA 4.0 与 GFDL（无固定章节、封面文字或封底文字）双许可；在这两种许可均可用时，再利用者可遵守其中一种或两种。特定项目或功能另有许可的，按其要求处理。
+
+外部导入的文本可能仅具有兼容 CC BY-SA 的许可而没有 GFDL 授权；此时不能选择 GFDL。应检查页面页脚、历史与讨论页。图像、音频等媒体可能采用其他许可或公共领域状态；不能把全部 Wikimedia 材料视为同一许可。
+
+判断：本社区引用或再利用这些第三方材料时保留其署名、分享和修改条件，不能以社区统一 MIT 规则将其重新授权。CC BY-SA 和 GFDL 继续保留为知识共享制度参考，均不是本社区当前原创论文的可选许可路线。
+
+来源：[Wikimedia Terms of Use §7](https://foundation.wikimedia.org/wiki/Terms_of_Use#7._Licensing_of_Content)
+
+许可原文：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en)、[GFDL 1.3](https://www.gnu.org/licenses/fdl-1.3.html)。
+
+## 8. GitHub 识别的许可证目录
+
+GitHub 不规定仓库必须采用哪种许可证。GitHub Docs 列出的搜索/识别目录包括：
+AFL-3.0、Apache-2.0、Artistic-2.0、BSL-1.0、BSD-2-Clause、BSD-3-Clause、BSD-3-Clause-Clear、BSD-4-Clause、0BSD、CC、CC0-1.0、CC-BY-4.0、CC-BY-SA-4.0、WTFPL、ECL-2.0、EPL-1.0、EPL-2.0、EUPL-1.1、AGPL-3.0、GPL family、GPL-2.0、GPL-3.0、LGPL family、LGPL-2.1、LGPL-3.0、ISC、LPPL-1.3c、MS-PL、MIT、MPL-2.0、OSL-3.0、PostgreSQL、OFL-1.1、NCSA、Unlicense、zlib。
+
+此列表是 GitHub 的识别/搜索目录，不是 GitHub 采用或背书的许可清单，也不等于 OSI 批准目录。CC 许可适合内容而非软件；OFL 适用于字体；LPPL 适用于 TeX 生态；其余软件许可证应按宽松、弱互惠、强互惠、专用许可逐一判断。
+
+来源：[GitHub Docs 许可证目录](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository#searching-github-by-license-type)
+
+## 8.1 GitHub Docs 识别的许可证逐项目录
+
+保留此前研究记录的 36 个搜索/识别条目，其中 3 个是许可证家族、33 个是具体标识。每个具体条目链接至 SPDX；CC、GPL、LGPL 家族项链接回 GitHub 目录。**以下除 MIT 外均是比较研究或第三方许可条目，不是本社区当前原创投稿的许可选项。** 第三方材料是否能随作品公开，须逐项确认实际版本和兼容性，不能从“宽松”标签直接推定可删除原声明。
+
+| 标识 | 名称 | 资产类型 | 本社区判断与第三方边界 | 原文 / SPDX |
+|---|---|---|---|---|
+| AFL-3.0 | Academic Free License 3.0 | 软件 | 第三方许可；条款较复杂，需核对原条件 | [SPDX](https://spdx.org/licenses/AFL-3.0.html) |
+| Apache-2.0 | Apache License 2.0 | 软件 | 第三方许可；明确专利授权，保留通知等义务 | [SPDX](https://spdx.org/licenses/Apache-2.0.html) |
+| Artistic-2.0 | Artistic License 2.0 | 软件 | 第三方特定生态许可；按原条款处理 | [SPDX](https://spdx.org/licenses/Artistic-2.0.html) |
+| BSL-1.0 | Boost Software License 1.0 | 软件 | 第三方宽松许可；核对保留声明的条件 | [SPDX](https://spdx.org/licenses/BSL-1.0.html) |
+| BSD-2-Clause | BSD 2-Clause | 软件 | 第三方宽松许可；保留版权与免责声明 | [SPDX](https://spdx.org/licenses/BSD-2-Clause.html) |
+| BSD-3-Clause | BSD 3-Clause | 软件 | 第三方宽松许可；另有禁止未经授权背书条件 | [SPDX](https://spdx.org/licenses/BSD-3-Clause.html) |
+| BSD-3-Clause-Clear | BSD 3-Clause Clear | 软件 | 第三方 BSD 变体；需核对专利条款 | [SPDX](https://spdx.org/licenses/BSD-3-Clause-Clear.html) |
+| BSD-4-Clause | BSD 4-Clause | 软件 | 第三方旧式许可；含广告条款，不适合统一 MIT 规则 | [SPDX](https://spdx.org/licenses/BSD-4-Clause.html) |
+| 0BSD | Zero-Clause BSD | 软件 | 第三方极宽松许可；保留对权利归属及免责声明的核查 | [SPDX](https://spdx.org/licenses/0BSD.html) |
+| CC | Creative Commons family | 内容 | 第三方家族标识；须查明具体许可与版本 | [GitHub 目录](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository#searching-github-by-license-type) |
+| CC0-1.0 | CC0 1.0 | 数据/内容 | 第三方公共领域奉献工具，含兜底许可；保留原状态 | [SPDX](https://spdx.org/licenses/CC0-1.0.html) |
+| CC-BY-4.0 | CC BY 4.0 | 内容 | 第三方及历史材料保留署名与许可条件；不改授纯 MIT | [SPDX](https://spdx.org/licenses/CC-BY-4.0.html) |
+| CC-BY-SA-4.0 | CC BY-SA 4.0 | 内容 | 第三方材料保留相同方式共享条件；核对组合与改编范围 | [SPDX](https://spdx.org/licenses/CC-BY-SA-4.0.html) |
+| WTFPL | Do What The F*ck You Want To Public License | 软件 | 参考条目；法律表达与免责范围须核查，不适合作统一规则 | [SPDX](https://spdx.org/licenses/WTFPL.html) |
+| ECL-2.0 | Educational Community License 2.0 | 软件 | 第三方软件许可；需核对版权、专利和再分发条件 | [SPDX](https://spdx.org/licenses/ECL-2.0.html) |
+| EPL-1.0 | Eclipse Public License 1.0 | 软件 | 第三方弱 copyleft 旧版本；不能直接改标 MIT | [SPDX](https://spdx.org/licenses/EPL-1.0.html) |
+| EPL-2.0 | Eclipse Public License 2.0 | 软件 | 第三方弱 copyleft 许可；核对源码与分发义务 | [SPDX](https://spdx.org/licenses/EPL-2.0.html) |
+| EUPL-1.1 | European Union Public Licence 1.1 | 软件 | 第三方旧版本许可；注意实际版本与兼容性 | [SPDX](https://spdx.org/licenses/EUPL-1.1.html) |
+| AGPL-3.0 | GNU AGPL v3 | 软件 | 第三方强 copyleft 许可；网络服务场景也可能触发源码义务 | [SPDX](https://spdx.org/licenses/AGPL-3.0.html) |
+| GPL | GNU GPL family | 软件 | 第三方家族标识；须查明具体版本及 later 选择 | [GitHub 目录](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository#searching-github-by-license-type) |
+| GPL-2.0 | GNU GPL v2 | 软件 | 第三方强 copyleft 许可；保留原条件，核对衍生与分发 | [SPDX](https://spdx.org/licenses/GPL-2.0.html) |
+| GPL-3.0 | GNU GPL v3 | 软件 | 第三方强 copyleft 许可；含专利、反锁定条款 | [SPDX](https://spdx.org/licenses/GPL-3.0.html) |
+| LGPL | GNU LGPL family | 软件 | 第三方家族标识；须查明具体版本及 later 选择 | [GitHub 目录](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository#searching-github-by-license-type) |
+| LGPL-2.1 | GNU LGPL v2.1 | 软件 | 第三方弱 copyleft 许可；主要面向库，需核对链接条件 | [SPDX](https://spdx.org/licenses/LGPL-2.1.html) |
+| LGPL-3.0 | GNU LGPL v3 | 软件 | 第三方弱 copyleft 许可；核对链接与再分发义务 | [SPDX](https://spdx.org/licenses/LGPL-3.0.html) |
+| ISC | ISC License | 软件 | 第三方简洁宽松许可；按原文本保留声明 | [SPDX](https://spdx.org/licenses/ISC.html) |
+| LPPL-1.3c | LaTeX Project Public License 1.3c | TeX 软件 | 第三方 TeX 文件按原许可；不推定论文 PDF 也适用 LPPL | [SPDX](https://spdx.org/licenses/LPPL-1.3c.html) |
+| MS-PL | Microsoft Public License | 软件 | 第三方许可；核对专利和源码/二进制分发条款 | [SPDX](https://spdx.org/licenses/MS-PL.html) |
+| MIT | MIT License | 软件；社区明确覆盖的其他原创材料 | 本社区当前统一采用；须有权授权并注明版权人和范围 | [SPDX](https://spdx.org/licenses/MIT.html) |
+| MPL-2.0 | Mozilla Public License 2.0 | 软件 | 第三方文件级 copyleft；修改文件须遵守原许可 | [SPDX](https://spdx.org/licenses/MPL-2.0.html) |
+| OSL-3.0 | Open Software License 3.0 | 软件 | 第三方强 copyleft 许可；含网络分发相关条款 | [SPDX](https://spdx.org/licenses/OSL-3.0.html) |
+| PostgreSQL | PostgreSQL License | 软件 | 第三方宽松许可；保留原版权与许可声明 | [SPDX](https://spdx.org/licenses/PostgreSQL.html) |
+| OFL-1.1 | SIL Open Font License 1.1 | 字体 | 第三方字体按 OFL 条件；不改标为整份论文的 MIT 许可 | [SPDX](https://spdx.org/licenses/OFL-1.1.html) |
+| NCSA | University of Illinois/NCSA | 软件 | 第三方宽松许可；按原文本保留通知 | [SPDX](https://spdx.org/licenses/NCSA.html) |
+| Unlicense | The Unlicense | 软件 | 第三方公共领域式许可；保留原状态并核对具体权利 | [SPDX](https://spdx.org/licenses/Unlicense.html) |
+| zlib | zlib License | 软件 | 第三方宽松许可；保留来源标识及相关修改声明 | [SPDX](https://spdx.org/licenses/zlib.html) |
+
+来源：[GitHub Docs license type catalog](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository#searching-github-by-license-type)。这份列表是 GitHub 搜索和识别目录，不等于 GitHub 采用或背书全部条目，也不是 OSI 批准目录。
+
+## 9. CCF 与 OpenI PCL 的许可证边界
+
+- **CCF：**本次未发现对所有 CCF 期刊、会议论文、报告和网站内容统一适用的一份开放许可证。章程与科研伦理规范不是作品许可证。每篇论文应按具体出版物、会议/期刊作者协议、出版商合同和论文页面版权声明判断。
+- **OpenI PCL：**平台承载代码仓库、模型、数据集和协同任务，但不能推定全部项目采用启智开源许可证或木兰-启智模型许可证。每个仓库 LICENSE、模型卡许可、数据集许可和平台服务条款必须分别核对。
+
+本社区判断：这些平台上的第三方材料不会因被提交到本社区而自动获得 MIT 授权。来源：[CCF](https://www.ccf.org.cn/)、[OpenI PCL](https://openi.pcl.ac.cn/)。
+
+## 10. 其他工具与平台授权
+
+- CC0：公共领域奉献工具，含权利放弃无效时的兜底公共许可。
+- Public Domain Mark：公共领域标记。
+- arXiv perpetual non-exclusive license：平台分发授权。
+- ChinaXiv non-exclusive irrevocable license：平台存档/分发授权。
+- GitHub Terms of Service：平台服务条款。
+- CLA/DCO：贡献者权利确认/贡献流程，不等同项目作品许可证。
+
+## 11. 当前采用规则汇总
+
+| 资产 | v0.3 采用规则 | 范围与边界 |
+|---|---|---|
+| 论文、研究报告、知识文档 | 可授权的原创材料统一 MIT | 注明实际版权人、版本、覆盖内容与第三方排除项 |
+| 代码、脚本、工具 | 可授权的原创材料统一 MIT | 第三方依赖保留其声明及许可义务 |
+| Lean/Coq 证明工程 | 可授权的原创材料统一 MIT | 区分原创证明文件、外部库与运行工具 |
+| 数据集、元数据 | 可授权的原创部分按明确范围统一 MIT | 不给事实或公共领域材料制造版权；另外核实数据库权利、隐私和第三方授权 |
+| 模型权重和配套材料 | 仅在有权按 MIT 授权的范围内适用统一规则 | 上游模型、数据和专利等条件不能被 MIT 总标签覆盖 |
+| 第三方材料 | 保留原许可及公开依据 | CC、GFDL、GPL 等目录条目是参考和第三方许可，不能直接统一改授 MIT |
+| 平台存档与处理 | 说明运营处理范围、保留版本与引用信息 | 不把平台自己的处理承诺伪装为对公众已获许可权利的新增限制 |
+
+这一选择来自社区采用决定 [Issue #4](https://github.com/knogen/open-research-commons/issues/4)，不是 MIT、Creative Commons 或参考平台替本社区作出的决定。历史版本和第三方权利按第 0 节及 [LICENSE-DOCS.md](../LICENSE-DOCS.md) 处理。
+
+## 附录：MIT 许可证完整标准文本
+
+每个成果使用下列完整文本，并填写其实际年份与版权人；`[year]` 和 `[actual copyright holder(s)]` 是待填字段，不代表社区取得所有成果的版权。仓库本身的版权声明见 [LICENSE](../LICENSE)。标准条款来源：[Open Source Initiative](https://opensource.org/license/mit)、[SPDX MIT](https://spdx.org/licenses/MIT.html)。
+
+```text
+MIT License
+
+Copyright (c) [year] [actual copyright holder(s)]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+此目录保留其他系统的许可事实及研究判断，不能代替逐项确认实际权利人与完整法律文本。旧目录的推荐结论仅记录当时讨论；当前采用规则以本文件第 0 节和第 11 节为准。
+

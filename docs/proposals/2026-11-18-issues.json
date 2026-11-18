@@ -1,0 +1,91 @@
+{
+  "repository": "knogen/open-research-commons",
+  "captured_date": "2026-11-18",
+  "baseline_commit": "d4c0013a7dbc55c48351ccc3530f9eff0f17e518",
+  "archive_branch": "archive/v0.2-before-issues-20261118-d4c0013",
+  "issues": [
+    {
+      "number": 1,
+      "title": "宪章讨论：第一章 宗旨与范围",
+      "body": "条款：第一章 宗旨与范围\n\n建议修改：初期服务数学及相关研究，包括论文、证明、研究代码和配套材料。随着社区和技术条件发展，在逐步扩展到其他领域。\n\n理由及来源：",
+      "url": "https://github.com/knogen/open-research-commons/issues/1",
+      "author": "lemmata-lab",
+      "state": "open",
+      "labels": [],
+      "created_at": "2026-11-18T03:23:12Z",
+      "updated_at": "2026-11-18T03:23:12Z",
+      "comments_count": 0,
+      "comments": []
+    },
+    {
+      "number": 2,
+      "title": "宪章讨论：第四章 发表与署名",
+      "body": "条款：第四章 发表与署名\n\n建议修改：建议本章改为投稿、发表和署名\n明确接收什么，提交什么，满足哪些条件可以公开发表\n例如 论文+Lean verify(如对应的证明文件、运行环境说明和检查记录，别人可复现），证明可以是全部证明，可以是针对文章中，某个部分的证明。社区再持续检查和补充。\n\n\n\n理由及来源：",
+      "url": "https://github.com/knogen/open-research-commons/issues/2",
+      "author": "lemmata-lab",
+      "state": "open",
+      "labels": [],
+      "created_at": "2026-11-18T03:34:07Z",
+      "updated_at": "2026-11-18T03:34:07Z",
+      "comments_count": 0,
+      "comments": []
+    },
+    {
+      "number": 3,
+      "title": "宪章讨论：第四章 发表与署名",
+      "body": "条款：第四章 发表与署名\n\n建议修改：人提出数学问题，智能体独立找到核心思路并完成证明。人类研究者随后逐步核查，确认论证成立，如实说明分工，并负责回应质疑。这类成果能否在社区公开发表？如果能，人在其中的作用，如何构成发表的前提。\n\n理由及来源：",
+      "url": "https://github.com/knogen/open-research-commons/issues/3",
+      "author": "lemmata-lab",
+      "state": "open",
+      "labels": [],
+      "created_at": "2026-11-18T03:50:09Z",
+      "updated_at": "2026-11-18T03:50:09Z",
+      "comments_count": 0,
+      "comments": []
+    },
+    {
+      "number": 4,
+      "title": "宪章讨论：第七章 知识产权与许可",
+      "body": "条款：第七章 知识产权与许可\n\n建议修改：社区统一采用MIT许可证，适用于提交者有权授权的论文、代码、证明文件及其他原创材料。提交者应注明实际版权人及许可覆盖的内容。\n\n公众可依照MIT许可证使用、复制、修改、合并、出版、分发、再许可或出售相关内容。分发其副本或实质性部分时，应保留原版权声明和许可声明。\n\n投稿中包含的第三方材料，应注明来源及适用许可，并按其原有条件使用。提交者应确认有权将相关材料公开。\n\n社区应在成果页面明确许可范围，提供MIT许可证全文，并保留成果的作者、版本和引用信息。\n\n理由及来源：",
+      "url": "https://github.com/knogen/open-research-commons/issues/4",
+      "author": "lemmata-lab",
+      "state": "open",
+      "labels": [],
+      "created_at": "2026-11-18T04:06:17Z",
+      "updated_at": "2026-11-18T04:06:17Z",
+      "comments_count": 0,
+      "comments": []
+    },
+    {
+      "number": 5,
+      "title": "宪章讨论：第五章 证据、引用与验证",
+      "body": "条款：第五章 证据、引用与验证\n\n建议修改：题目建议改为“证据、核查与开放协作”，加入社区成员怎样参与、作者或平台怎样处理\n\n\n理由及来源：",
+      "url": "https://github.com/knogen/open-research-commons/issues/5",
+      "author": "lemmata-lab",
+      "state": "open",
+      "labels": [],
+      "created_at": "2026-11-18T04:10:57Z",
+      "updated_at": "2026-11-18T04:10:57Z",
+      "comments_count": 0,
+      "comments": []
+    },
+    {
+      "number": 6,
+      "title": "宪章讨论：第四章 发表与署名",
+      "body": "条款：第四章 发表与署名\n\n建议修改：如果对于投稿人，lean 证明有难度，通过其他形式验证，是否也可行？注明方法、覆盖范围、完成程度、依据等。\n\n理由及来源：",
+      "url": "https://github.com/knogen/open-research-commons/issues/6",
+      "author": "lemmata-lab",
+      "state": "open",
+      "labels": [],
+      "created_at": "2026-11-18T04:19:40Z",
+      "updated_at": "2026-11-18T04:19:40Z",
+      "comments_count": 0,
+      "comments": []
+    }
+  ],
+  "adoption": {
+    "version": "0.3",
+    "date": "2026-11-18",
+    "decision": "依项目维护者明确指令，全部采纳 Issue #1–#6，作为本次宪章修订的第一优先级依据。"
+  }
+}
