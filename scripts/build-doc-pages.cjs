@@ -6,8 +6,8 @@ const root = path.resolve(__dirname, '..');
 const repo = 'https://github.com/knogen/open-research-commons';
 const catalog = JSON.parse(fs.readFileSync(path.join(root, 'docs/charter-editions.json')));
 const sources = {
-  licenses: 'docs/license-system-v0.5.md',
-  verification: 'docs/verification-labels-v0.5.md',
+  licenses: 'docs/license-system-' + catalog.latest + '.md',
+  verification: 'docs/verification-labels-' + catalog.latest + '.md',
   'licenses/v0.3': 'docs/license-system-v0.3.md',
   versions: 'docs/version-history.md',
 };

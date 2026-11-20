@@ -1,11 +1,19 @@
 {
-  "latest": "v0.5",
+  "latest": "v0.6",
   "editions": [
+    {
+      "id": "v0.6",
+      "label": "v0.6 · 基本规则修订讨论稿",
+      "date": "2026-11-20",
+      "source": "docs/constitution-v0.6.md"
+    },
     {
       "id": "v0.5",
       "label": "v0.5 · 基本规则讨论稿",
       "date": "2026-11-20",
-      "source": "docs/constitution-v0.5.md"
+      "source": "docs/constitution-v0.5.md",
+      "ref": "863e27ba92803339a01d960a944e56a3a4e8e6c7",
+      "blob": "67b14e66de7432794e9dbb4894b127137aa318af"
     },
     {
       "id": "v0.4",

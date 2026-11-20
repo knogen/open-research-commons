@@ -1,6 +1,6 @@
 # Repository documentation license
 
-Original repository documentation offered under MIT from v0.3 and the website source code retain their MIT grants. The community submission rules in [v0.5, chapter 7](docs/constitution-v0.5.md) apply MIT to original code. Submitters of papers and other written works select from the licenses published by the community. The complete, unmodified MIT license text is in [LICENSE](LICENSE).
+Original repository documentation offered under MIT from v0.3 and the website source code retain their MIT grants. The community submission rules in [v0.6, chapter 7](docs/constitution-v0.6.md) apply MIT to original code. Submitters of papers and other written works select from the licenses published by the community. Materials in a submission that have different licenses must be identified separately. The complete, unmodified MIT license text is in [LICENSE](LICENSE).
 
 ## Scope and attribution
 
@@ -17,6 +17,6 @@ Historical source snapshots are reference records. Their third-party excerpts re
 
 ## References
 
-- [Current community licensing rules](docs/license-system-v0.5.md)
+- [Current community licensing rules](docs/license-system-v0.6.md)
 - [MIT standard text — Open Source Initiative](https://opensource.org/license/mit)
 - [CC BY 4.0 legal code, Sections 2(a)(1) and 6(c)](https://creativecommons.org/licenses/by/4.0/legalcode.en)

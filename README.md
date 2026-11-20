@@ -1,6 +1,6 @@
 # Open Research Commons
 
-[《开放科研共同体基本规则》v0.5（讨论稿）](docs/constitution-v0.5.md)面向各学科的研究者及其他知识贡献者。发布日期为 2026-11-20。投稿材料分类见[核查记录](docs/verification-labels-v0.5.md)，不同成果的授权安排见[成果许可](docs/license-system-v0.5.md)。
+[《开放科研共同体基本规则》v0.6（讨论稿）](docs/constitution-v0.6.md)面向各学科的研究者及所有愿意参与研究和知识共享的人。发布日期为 2026-11-20。投稿材料分类见[核查记录](docs/verification-labels-v0.6.md)，不同成果的授权安排见[成果许可](docs/license-system-v0.6.md)。
 
 ## 阅读与引用
 
@@ -8,7 +8,7 @@
 
 ## 内容维护
 
-[版本目录](docs/charter-editions.json)指定最新版、各版 Markdown 及历史提交。当前正文以同事提供的《开放科研共同体基本规则v2.docx》为底稿，源文件 SHA-256 为 `6418fe867d1b348322c3aa301cd228661a41d23fd018be1321586d6c315b9eab`。版本日期、提案及外部参考属于编辑资料。
+[版本目录](docs/charter-editions.json)指定最新版、各版 Markdown 及历史提交。当前正文以同事提供的《开放科研共同体基本规则v3.docx》为底稿，源文件 SHA-256 为 `b9c6297f9a27b74442f339b99eac98d2c03b7b110bf8feb57e5c029b86f0e62a`。版本日期、提案及外部参考属于编辑资料。
 
 编辑文档后运行以下命令，生成站点可直接使用的静态文件。生成器核对每份历史文本的 Git blob 标识。
 

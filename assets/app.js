@@ -71,7 +71,7 @@ async function loadArchive(entry, container) {
   }
 }
 function home() {
-  return '<section class="hero"><div class="wrap"><h1>开放科研共同体</h1><p>面向各学科的研究者及其他知识贡献者，提供成果发表、材料共享和持续协作的空间。</p><div class="actions"><a class="btn primary" href="#/constitution/latest">阅读基本规则 ' +
+  return '<section class="hero"><div class="wrap"><h1>开放科研共同体</h1><p>面向各学科的研究者及所有愿意参与研究和知识共享的人，提供成果发表、材料共享和持续协作的空间。</p><div class="actions"><a class="btn primary" href="#/constitution/latest">阅读基本规则 ' +
     esc(latest) + '</a><a class="btn ghost" href="#/versions">浏览历史版本</a></div></div></section>' +
     '<section class="section"><div class="wrap"><h2>制度参考档案</h2><div class="grid">' + sourceCards() + '</div></div></section>';
 }
@@ -79,7 +79,7 @@ function sourceCards() {
   return sources.map(s => '<article class="card"><span class="tag">' + esc(s.kind) + '</span><h3>' + esc(s.name) + '</h3><p>' + esc(s.desc) + '</p><a href="#/references/' + esc(s.id) + '">查看原文快照与分析 →</a></article>').join('');
 }
 function references() {
-  return '<section class="section"><div class="wrap"><div class="kicker">PRIMARY SOURCE ARCHIVE</div><h1>制度参考档案</h1><p class="section-intro">快照保存原文短摘录与定位，第三方内容保持其原有版权和许可。当前规则以 v0.5 讨论稿为准；历史提案与外部制度继续用于追溯和比较。</p><p><a class="textlink" href="#/constitution">查看基本规则与相关提案 →</a></p><div class="grid">' + sourceCards() + '</div></div></section>';
+  return '<section class="section"><div class="wrap"><div class="kicker">PRIMARY SOURCE ARCHIVE</div><h1>制度参考档案</h1><p class="section-intro">快照保存原文短摘录与定位，第三方内容保持其原有版权和许可。当前讨论稿为 ' + esc(latest) + '。历史提案与外部制度可按来源查阅。</p><p><a class="textlink" href="#/constitution">查看基本规则与相关提案 →</a></p><div class="grid">' + sourceCards() + '</div></div></section>';
 }
 function sourcePage(id) {
   const s = sources.find(x => x.id === id);
