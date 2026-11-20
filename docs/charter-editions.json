@@ -1,0 +1,63 @@
+{
+  "latest": "v0.5",
+  "editions": [
+    {
+      "id": "v0.5",
+      "label": "v0.5 · 基本规则讨论稿",
+      "date": "2026-11-20",
+      "source": "docs/constitution-v0.5.md"
+    },
+    {
+      "id": "v0.4",
+      "label": "v0.4 · 提案关联校正版",
+      "source": "docs/constitution-v0.4.md",
+      "ref": "22a748983a21b3c427380b29f883536ba5ddf363",
+      "blob": "2129c2a4335e6bc169201aa7b3cfac667bb32b4f"
+    },
+    {
+      "id": "v0.4-initial",
+      "label": "v0.4 · 编辑修订初稿",
+      "source": "docs/constitution-v0.4.md",
+      "ref": "6050df7969a4bc4ccc379375bc70a25097cb45ea",
+      "blob": "284afd4edd8451a9b868ab526f8037cb5647ee1c",
+      "input": "docs/archive/constitution-v0.4-initial.md"
+    },
+    {
+      "id": "v0.3",
+      "label": "v0.3 · 归档分支版",
+      "source": "docs/constitution-v0.3.md",
+      "ref": "4b1d110351b27edc2df29aef9a58f46d3304f9a4",
+      "blob": "75973c9ff38871e6d6415c8d6e64f61a941ce8e1"
+    },
+    {
+      "id": "v0.3-initial",
+      "label": "v0.3 · 首次采纳提案版",
+      "source": "docs/constitution-v0.3.md",
+      "ref": "051299c43f62fb3cadc7456eee9411e443c30c6d",
+      "blob": "5e424c398137e8be67ed12d844033105ca55a7e7",
+      "input": "docs/archive/constitution-v0.3-initial.md"
+    },
+    {
+      "id": "v0.2",
+      "label": "v0.2 · 归档分支版",
+      "source": "docs/constitution-v0.2.md",
+      "ref": "d4c0013a7dbc55c48351ccc3530f9eff0f17e518",
+      "blob": "23077da63d434726d048062b4f5438e0ffbcec02"
+    },
+    {
+      "id": "v0.2-initial",
+      "label": "v0.2 · 初稿",
+      "source": "docs/constitution-v0.2.md",
+      "ref": "3a9ef021ca99ff8a29d95304cecd55ad06ab0ba3",
+      "blob": "dbd2c737b8e9c73deaafee820af0e4f80c3864df",
+      "input": "docs/archive/constitution-v0.2-initial.md"
+    },
+    {
+      "id": "v0.1",
+      "label": "v0.1 · 初稿",
+      "source": "docs/constitution-v0.1.md",
+      "ref": "d4c0013a7dbc55c48351ccc3530f9eff0f17e518",
+      "blob": "e5ddea462ef8ff8a5c8fce2083842fc0575fdf0d"
+    }
+  ]
+}

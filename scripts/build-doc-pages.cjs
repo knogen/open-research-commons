@@ -1,52 +1,77 @@
-// Local authoring tool; the published site needs no build or runtime dependency.
-// Install the pinned parser with: npm install --no-save --package-lock=false marked@17.0.5
+// Build the static reader with marked@17.0.5. Only authoring requires Node.
 const fs = require('node:fs');
 const path = require('node:path');
-
+const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
-const version = '0.4';
+const repo = 'https://github.com/knogen/open-research-commons';
+const catalog = JSON.parse(fs.readFileSync(path.join(root, 'docs/charter-editions.json')));
 const sources = {
-  licenses: 'docs/license-system-v0.3.md',
-  verification: 'docs/verification-labels-v0.4.md',
+  licenses: 'docs/license-system-v0.5.md',
+  verification: 'docs/verification-labels-v0.5.md',
+  'licenses/v0.3': 'docs/license-system-v0.3.md',
   versions: 'docs/version-history.md',
 };
-const routes = {
-  'docs/constitution-v0.4.md': '#/constitution',
-  'docs/license-system-v0.3.md': '#/licenses',
-  'docs/verification-labels-v0.4.md': '#/verification',
-  'docs/version-history.md': '#/versions',
-};
-const escapeHtml = value => String(value).replace(/[&<>"']/g, ch => ({
-  '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
-}[ch]));
-
-async function main() {
+const routes = new Map(Object.entries(sources).map(([key, file]) => [file, '#/' + key]));
+for (const entry of catalog.editions) {
+  routes.set(entry.input || entry.source, '#/constitution/' + entry.id);
+}
+function esc(value) {
+  return String(value).replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
+}
+async function build() {
   const { Marked } = await import(require.resolve('marked'));
-  const pages = {};
-  for (const [key, source] of Object.entries(sources)) {
-    const markdown = fs.readFileSync(path.join(root, source), 'utf8');
-    const parser = new Marked({ gfm: true, breaks: false });
+  function render(entry) {
+    const bytes = fs.readFileSync(path.join(root, entry.input || entry.source));
+    if (entry.blob) {
+      const sha = crypto.createHash('sha1').update('blob ' + bytes.length + '\0').update(bytes).digest('hex');
+      if (sha !== entry.blob) throw Error('Archive differs from its Git source: ' + entry.id);
+    }
+    const parser = new Marked({ gfm: true });
     parser.use({ renderer: {
-      html({ text }) { return escapeHtml(text); },
-      link({ href, title, tokens }) {
+      html({text}) { return esc(text); },
+      link({href, tokens, title}) {
         const label = this.parser.parseInline(tokens);
         if (/^(?:javascript|data|vbscript):/i.test(href)) return label;
         let target = href;
         if (!/^(?:https?:|mailto:|#)/i.test(href)) {
-          const [relative, fragment] = href.split('#', 2);
-          const resolved = path.posix.normalize(path.posix.join(path.posix.dirname(source), relative));
-          target = routes[resolved] || 'https://github.com/knogen/open-research-commons/blob/main/' + resolved + (fragment ? '#' + fragment : '');
+          const [file, fragment] = href.split('#', 2);
+          const dest = path.posix.normalize(path.posix.join(path.posix.dirname(entry.source), file));
+          // Historical supporting documents resolve at the very same Git revision.
+          target = entry.ref || fragment ? null : routes.get(dest);
+          if (!target) target = repo + '/blob/' + (entry.ref || 'main') + '/' + dest + (fragment ? '#' + fragment : '');
+          if (dest === entry.source && entry.id && !fragment) target = '#/constitution/' + entry.id;
         }
         const external = /^https?:/i.test(target) ? ' target="_blank" rel="noreferrer"' : '';
-        return '<a href="' + escapeHtml(target) + '"' + (title ? ' title="' + escapeHtml(title) + '"' : '') + external + '>' + label + '</a>';
+        return '<a href="' + esc(target) + '"' + (title ? ' title="' + esc(title) + '"' : '') + external + '>' + label + '</a>';
       },
-    } });
-    const html = parser.parse(markdown).replaceAll('<table>', '<div class="tablewrap"><table>').replaceAll('</table>', '</table></div>');
-    pages[key] = { source, version: markdown.match(/^# .*?v(\d+\.\d+)/m)?.[1] || version, html };
+    }});
+    const html = parser.parse(bytes.toString('utf8'))
+      .replaceAll('<table>', '<div class="tablewrap"><table>').replaceAll('</table>', '</table></div>');
+    if (entry.id !== catalog.latest) return html;
+    return html.replace(/(<h2>([^<]+)<\/h2>)([\s\S]*?)(?=<h2>|$)/g, (_, heading, title, body) => {
+      const query = new URLSearchParams({title: '规则讨论：' + title, body: '版本：' + entry.id + '\n章节：' + title + '\n\n修订建议：'});
+      return '<section class="charter-section">' + heading + body +
+        '<a class="textlink issue-link" href="' + repo + '/issues/new?' + esc(query.toString()) +
+        '" target="_blank" rel="noreferrer">讨论本章 ↗</a></section>';
+    });
   }
+  const pages = {};
+  for (const [key, source] of Object.entries(sources)) {
+    pages[key] = { source, html: render({source}), version: source.match(/-v([\d.]+)\.md$/)?.[1] || catalog.latest.slice(1) };
+  }
+  const dir = path.join(root, 'assets/editions');
+  fs.mkdirSync(dir, { recursive: true });
+  const editions = catalog.editions.map(entry => {
+    const html = render(entry);
+    const sourceUrl = repo + '/blob/' + (entry.ref || 'main') + '/' + entry.source;
+    const metadata = {id:entry.id, label:entry.label, sourceUrl};
+    if (entry.id === catalog.latest) return {...metadata, html};
+    const asset = 'assets/editions/' + entry.id + '.html';
+    fs.writeFileSync(path.join(root, asset), html);
+    return {...metadata, asset};
+  });
   fs.writeFileSync(path.join(root, 'assets/document-content.js'),
-    '// Generated from the current Markdown documents by scripts/build-doc-pages.cjs.\n' +
-    'const documentContent = ' + JSON.stringify({ version, pages }, null, 2) + ';\n');
-  console.log('Generated document-content.js from ' + Object.keys(pages).length + ' Markdown documents.');
+    '// Generated by scripts/build-doc-pages.cjs.\nconst documentContent = ' +
+    JSON.stringify({latest:catalog.latest, editions, pages}, null, 2) + ';\n');
 }
-main().catch(error => { console.error(error); process.exitCode = 1; });
+build().catch(err => { console.error(err); process.exitCode = 1; });

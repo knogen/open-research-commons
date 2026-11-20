@@ -15,7 +15,7 @@ const sources=[
 {label:"可选 CC 许可",quote:"CC BY 4.0；CC BY-SA 4.0；CC BY-NC-SA 4.0；CC0 1.0",loc:"许可信息声明 · 许可选项 · lines 15–21",url:"https://www.chinaxiv.org/user/license.htm",note:"不同许可对应不同商业使用和衍生作品条件。"},
 {label:"合作作者授权",quote:"合作作品需要取得所有作者的授权才可以提交",loc:"许可信息声明 · 提交授权 · lines 22–25",url:"https://www.chinaxiv.org/user/license.htm",note:"投稿权限与共同作者授权是独立的提交前置条件。"}],borrow:"作者保留版权、平台非独占永久授权、许可选项明示、共同作者授权。",caution:"CC BY/CC BY-SA 允许商业再利用，可能与期刊协议冲突；投稿者须先核实第三方出版合同。"},
 {id:"ccf",name:"中国计算机学会 CCF",kind:"组织章程与科研伦理",desc:"学术共同体治理、科研诚信、AI 使用声明、研究过程记录、署名和评价规范。",urls:[["CCF 章程","https://www.ccf.org.cn/About_CCF/CCF_Constitution/"],["科研行为与学术道德规范（2026）","https://www.ccf.org.cn/About_CCF/CCF_Constitution/2026-07-16/915412.shtml"]],snapshots:[
-{label:"AI 使用与人类主导要求",quote:"核心学术思想、实验设计、逻辑推演及关键论证须由人主导完成",loc:"科研行为与学术道德规范 · 第七条 · 2026-06-27通过",url:"https://www.ccf.org.cn/About_CCF/CCF_Constitution/2026-07-16/915412.shtml",note:"本社区已按 Issue #3 接纳相应 AI-led 成果；这里保留与 CCF 人类主导要求的制度差异作为比较说明。"},
+{label:"AI 使用与人类主导要求",quote:"核心学术思想、实验设计、逻辑推演及关键论证须由人主导完成",loc:"科研行为与学术道德规范 · 第七条 · 2026-06-27通过",url:"https://www.ccf.org.cn/About_CCF/CCF_Constitution/2026-07-16/915412.shtml",note:"本版接收由人与智能体或多个智能体协作形成的成果；这里保留与 CCF 人类主导要求的制度差异作为比较说明。"},
 {label:"过程可追溯",quote:"应当真实记录研究过程和结果，妥善留存原始资料，确保可追溯、可验证",loc:"科研行为与学术道德规范 · 第八条",url:"https://www.ccf.org.cn/About_CCF/CCF_Constitution/2026-07-16/915412.shtml",note:"可转化为研究日志、数据、工具版本和验证记录要求。"},
 {label:"按贡献署名",quote:"成果署名应当按照对科研成果的贡献大小据实署名和排序",loc:"科研行为与学术道德规范 · 第十三条",url:"https://www.ccf.org.cn/About_CCF/CCF_Constitution/2026-07-16/915412.shtml",note:"支持以实际贡献而非身份或职位决定署名。"}],borrow:"责任与诚信、AI 使用声明、可追溯研究记录、据实署名和评价公正。",caution:"CCF 规范要求核心研究环节由人主导；本社区已采纳允许相应 AI-led 研究的规则，因此只能借鉴诚信和披露原则，不能原样移植准入要求。"},
 {id:"github",name:"GitHub",kind:"代码托管、贡献协议与平台条款",desc:"研究仓库许可证、用户内容所有权、平台授权、贡献者许可及 AI 输出责任。GitHub 是协作基础设施，不是单一开源许可证。",urls:[["GitHub Terms of Service（2026-04-27生效）","https://docs.github.com/en/site-policy/github-terms/github-terms-of-service"],["Licensing a repository","https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository"],["Adding a license to a repository","https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository"]],snapshots:[
@@ -30,32 +30,56 @@ const sources=[
 {label:"禁止无来源综合",quote:"Do not synthesize meaning from multiple sources to state or imply a conclusion not explicitly stated by any of the sources.",loc:"Wikipedia:No original research · §Synthesis of published material · lines 259–264",url:"https://en.wikipedia.org/wiki/Wikipedia:No_original_research",note:"这条是百科编辑政策，科研社区不能禁止原创综合；但可借鉴要求区分来源事实与作者自己的推论。"},
 {label:"LLM 编辑风险",quote:"LLMs can make things up",loc:"Wikipedia:Large language models · §Risks / Original research and hallucinations · lines 147–153",url:"https://en.wikipedia.org/wiki/Wikipedia:Large_language_models",note:"Wikipedia 对百科条目使用 LLM 有特定限制，不应作为科研发表的普遍禁令；可借鉴其幻觉、未核实引用和透明披露风险分析。"}],borrow:"主张级来源映射、可靠来源分层、区分来源陈述与新推论、知识再利用署名与相同方式共享。",caution:"Wikipedia 的 NOR/LLM 编辑规则属于百科知识治理，不是科研论文规范。不能据此禁止科研原创发现或将其 AI 编辑禁令泛化到本社区。"}
 ];
-const articles = constitutionData.articles;
-const VERSION = constitutionData.version;
 const REPO = 'https://github.com/knogen/open-research-commons';
+const latest = documentContent.latest;
+const editions = documentContent.editions;
+const archivedHtml = new Map();
 function esc(value) {
   return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 }
-function evidenceText(text) {
-  return esc(text).replace(/~~([\s\S]+?)~~/g, '<del>$1</del>');
-}
-function paragraphs(text, className) {
-  return String(text).split(/\n\n+/).map(p => '<p' + (className ? ' class="' + className + '"' : '') + '>' + evidenceText(p).replace(/\n/g, '<br>') + '</p>').join('');
-}
-function cite(c) {
-  return '<span class="ref"><a href="' + esc(c[3]) + '" target="_blank" rel="noreferrer">[' + esc(c[0]) + '] ↗</a><span>' + evidenceText(c[1]) + '</span></span>';
-}
 function printBar(title) {
-  return '<div class="printbar"><span>DOCUMENT VIEW · ' + esc(title) + '</span><button class="btn print-btn" onclick="window.print()">打印 / 导出 PDF ↗</button></div>';
+  return '<div class="printbar"><span>' + esc(title) + '</span><button class="btn print-btn" onclick="window.print()">打印 / 导出 PDF</button></div>';
+}
+function editionPicker(entry) {
+  const old = editions.filter(e => e.id !== latest).map(e =>
+    '<option value="' + esc(e.id) + '"' + (e.id === entry.id ? ' selected' : '') + '>' + esc(e.label) + '</option>').join('');
+  return '<div class="edition-tools"><label for="edition-picker">文档版本</label><select id="edition-picker">' +
+    '<option value="latest"' + (entry.id === latest ? ' selected' : '') + '>Latest · ' + esc(latest) +
+    '</option><optgroup label="历史版本 · Old versions">' + old + '</optgroup></select>' +
+    '<a href="#/constitution/' + esc(entry.id) + '">本版固定链接</a><a href="#/versions">版本记录</a></div>';
+}
+function charterPage(entry) {
+  const content = entry.html || archivedHtml.get(entry.id) || '<p role="status">正在载入历史正文…</p>';
+  const heading = (entry.id === latest ? '最新讨论稿' : '历史版本') + ' · ' + entry.label;
+  return '<section class="section"><div class="wrap reader">' + editionPicker(entry) + printBar(heading) +
+    '<div class="prose document-body charter-body" id="edition-content">' + content + '</div>' +
+    '<p class="version-links"><a target="_blank" rel="noreferrer" href="' + esc(entry.sourceUrl) + '">查看本版 Markdown 原文 ↗</a></p></div></section>';
+}
+async function loadArchive(entry, container) {
+  try {
+    const response = await fetch(entry.asset);
+    if (!response.ok) throw Error('HTTP ' + response.status);
+    const html = await response.text();
+    if (!html.startsWith('<h1>')) throw Error('Missing archived document');
+    archivedHtml.set(entry.id, html);
+    // The original container is detached if the reader has already switched pages.
+    container.innerHTML = html;
+  } catch {
+    container.innerHTML = '<p role="alert">历史正文加载失败。<button type="button">重新加载</button> 或 <a href="' +
+      esc(entry.sourceUrl) + '">打开对应提交的原文</a>。</p>';
+    container.querySelector('button').onclick = () => loadArchive(entry, container);
+  }
+}
+function home() {
+  return '<section class="hero"><div class="wrap"><h1>开放科研共同体</h1><p>面向各学科的研究者及其他知识贡献者，提供成果发表、材料共享和持续协作的空间。</p><div class="actions"><a class="btn primary" href="#/constitution/latest">阅读基本规则 ' +
+    esc(latest) + '</a><a class="btn ghost" href="#/versions">浏览历史版本</a></div></div></section>' +
+    '<section class="section"><div class="wrap"><h2>制度参考档案</h2><div class="grid">' + sourceCards() + '</div></div></section>';
 }
 function sourceCards() {
   return sources.map(s => '<article class="card"><span class="tag">' + esc(s.kind) + '</span><h3>' + esc(s.name) + '</h3><p>' + esc(s.desc) + '</p><a href="#/references/' + esc(s.id) + '">查看原文快照与分析 →</a></article>').join('');
 }
-function home() {
-  return '<section class="hero"><div class="wrap"><div class="eyebrow">OPEN RESEARCH · HUMAN–AI COLLABORATION</div><h1>数学起步，<br>开放核查与协作。</h1><p>面向人类研究者与 AI Agent，初期服务数学及相关研究。接收论文、证明、代码和配套材料，按成果类别公开材料、记录核查，并支持持续讨论与协作。</p><div class="actions"><a class="btn primary" href="#/constitution">阅读宪章 v' + VERSION + ' →</a><a class="btn ghost" href="#/verification">查看核查与参与方式</a></div><div class="stats"><div class="stat"><strong>06</strong><span>历史采纳提案</span></div><div class="stat"><strong>10</strong><span>宪章章节</span></div><div class="stat"><strong>v' + VERSION + '</strong><span>讨论稿</span></div></div></div></section><section class="section"><div class="wrap"><div class="kicker">COMMUNITY DECISIONS</div><h2>从社区提案，到当前规则</h2><div class="callout">v0.4 依编辑修订稿更新十章正文。数学定理或证明类投稿须提供支撑主要结论的形式化证明文件；Lean 为主要支持工具，也接受符合公布标准的其他系统。既有提案及制定记录继续保留。</div><p><a class="textlink" href="#/constitution">阅读条款与完整提案原文 →</a>　<a class="textlink" href="#/versions">查看版本记录与回退点 →</a></p></div></section><section class="section white"><div class="wrap"><div class="section-head"><div><div class="kicker">REFERENCE LIBRARY</div><h2>制度原文与来源快照</h2><p class="section-intro">社区提案与编辑修订稿保留为制定记录。以下外部制度用于比较，并链接到原始条文。</p></div></div><div class="grid">' + sourceCards() + '</div></div></section>';
-}
 function references() {
-  return '<section class="section"><div class="wrap"><div class="kicker">PRIMARY SOURCE ARCHIVE</div><h1>制度参考档案</h1><p class="section-intro">快照保存原文短摘录与定位，第三方内容保持其原有版权和许可。当前宪章以编辑修订稿为准；历史提案与外部制度继续用于追溯和比较。</p><p><a class="textlink" href="#/constitution">查看已采纳提案与宪章 →</a></p><div class="grid">' + sourceCards() + '</div></div></section>';
+  return '<section class="section"><div class="wrap"><div class="kicker">PRIMARY SOURCE ARCHIVE</div><h1>制度参考档案</h1><p class="section-intro">快照保存原文短摘录与定位，第三方内容保持其原有版权和许可。当前规则以 v0.5 讨论稿为准；历史提案与外部制度继续用于追溯和比较。</p><p><a class="textlink" href="#/constitution">查看基本规则与相关提案 →</a></p><div class="grid">' + sourceCards() + '</div></div></section>';
 }
 function sourcePage(id) {
   const s = sources.find(x => x.id === id);
@@ -66,44 +90,46 @@ function sourcePage(id) {
     return '<article class="snapshot"><div class="source-meta">SNAPSHOT ' + String(i+1).padStart(2,'0') + ' · ' + esc(q.loc) + '</div><blockquote>' + esc(q.quote) + '</blockquote><p>' + esc(q.note) + '</p><a href="' + esc(url.href) + '" target="_blank" rel="noreferrer">定位原文段落 ↗</a></article>';
   }).join('') + '<h2>借鉴与边界</h2><div class="callout">' + esc(s.borrow) + '</div><div class="callout warning">' + esc(s.caution) + '</div><p class="source-meta">采集日期：2026-11-17。第三方比较资料不替代本社区已采纳的 Issue 提案。</p></div></div></section>';
 }
-function proposalReference(id, relation) {
-  const proposal = constitutionData.proposals.find(p => p.number === id);
-  if (!proposal) throw new Error('Unknown proposal #' + id);
-  return '<div class="ref proposal-ref"><a href="' + esc(proposal.url) + '" target="_blank" rel="noreferrer">Issue #' + proposal.number + ' · ' + esc(proposal.title) + ' ↗</a><span>' + esc(relation) + '</span><small>已采纳 · v' + esc(proposal.adoptedVersion) + '</small>' + '</div>';
-}
-function proposalAppendix() {
-  return '<section class="proposal-appendix"><h2>附录二：历史采纳提案原文</h2><p>以下完整保留六份提案及其 v0.3 采纳记录。删除线仅标记本版已调整的落实说明；原始提案文字不作改写。</p>' + constitutionData.proposals.map(p => {
-    const updated = new Intl.DateTimeFormat('zh-CN', {timeZone:'Asia/Shanghai', dateStyle:'medium', timeStyle:'short'}).format(new Date(p.updated_at));
-    return '<article class="proposal-quote" id="proposal-' + p.number + '"><div class="proposal-heading"><span class="tag">已采纳 · v' + esc(p.adoptedVersion) + '</span><h3><a href="' + esc(p.url) + '" target="_blank" rel="noreferrer">Issue #' + p.number + ' · ' + esc(p.title) + ' ↗</a></h3></div><p class="source-meta">提案作者 @' + esc(p.author) + ' · 原提案更新于 ' + esc(updated) + '（北京时间） · 采集时状态 ' + esc(p.state) + '</p><blockquote class="proposal-body">' + esc(p.body) + '</blockquote><p><b>历史采纳落实：</b>' + evidenceText(p.adoptionSummary) + '</p>' + (p.revisionNote ? '<p class="revision-note"><b>本版说明：</b>' + esc(p.revisionNote) + '</p>' : '') + '<p class="source-meta">关联章节：' + p.articleNumbers.map(n => '第 ' + n + ' 章').join('、') + '</p></article>';
-  }).join('') + '<p><a class="textlink" href="' + REPO + '/blob/main/docs/proposals/2026-11-18-issues.json" target="_blank" rel="noreferrer">查看提案原文与采集记录 ↗</a></p></section>';
-}
-function constitution() {
-  return '<section class="section"><div class="wrap">' + printBar('CONSTITUTION v' + VERSION) + '<div class="kicker">COMMUNITY CONSTITUTION · v' + VERSION + '</div><h1>' + esc(constitutionData.title) + '</h1><p class="section-intro">正文依编辑修订稿更新。采纳提案、制定原因和外部参考作为制定记录保留于各章下方。</p><div class="callout"><b>本次修订依据：</b>' + esc(constitutionData.issuePriority) + '</div><p class="version-status">' + esc(constitutionData.status) + '</p><div class="version-links"><a href="#/versions">版本记录与回退点 →</a><a href="' + REPO + '/blob/main/docs/constitution-v0.4.md" target="_blank" rel="noreferrer">查看 Markdown 原文 ↗</a><a href="#/verification">配套核验规范 →</a><a href="' + REPO + '/blob/main/docs/proposals/2026-11-18-edited-draft.md" target="_blank" rel="noreferrer">编辑修订稿原文 ↗</a></div><p class="evidence-note">' + esc(constitutionData.evidenceNote) + '</p><div class="prose">' + articles.map((a,i) => '<article class="article-doc"><div class="source-meta">ARTICLE ' + String(i+1).padStart(2,'0') + '</div><h2>' + esc(a.title) + '</h2>' + paragraphs(a.text, 'article-text') + (a.proposalIds.length ? '<h3>采纳提案</h3><div class="refs">' + a.proposalIds.map(id => proposalReference(id, a.proposalRelations[id])).join('') + '</div>' : '') + '<h3>制定原因</h3>' + paragraphs(a.reason) + (a.revisionNote ? '<p class="revision-note"><b>本版说明：</b>' + esc(a.revisionNote) + '</p>' : '') + (a.refs.length ? '<h3>外部制度比较参考</h3><div class="refs">' + a.refs.map(cite).join('') + '</div>' : '') + (a.options.length ? '<h3>后续实施细则</h3><ol>' + a.options.map(o => '<li>' + evidenceText(o) + '</li>').join('') + '</ol>' : '') + '<a class="textlink issue-link" href="' + REPO + '/issues/new?title=' + encodeURIComponent('宪章讨论：' + a.title) + '&body=' + encodeURIComponent('版本：v' + VERSION + '\n条款：' + a.title + '\n\n建议修改：\n\n理由及来源：') + '" target="_blank" rel="noreferrer">针对本章提出后续讨论 ↗</a></article>').join('') + '<section class="discussion-appendix"><h2>附录一：编辑稿中的讨论事项</h2><p>以下为稿中保留的括注，尚不视为已经通过的操作程序。</p><ul>' + constitutionData.discussionNotes.map(n => '<li>' + esc(n) + '</li>').join('') + '</ul></section>' + proposalAppendix() + '</div><p class="source-meta">v' + VERSION + ' · ' + esc(constitutionData.date) + ' · 升级前版本已保存在独立分支。</p></div></section>';
-}
 function documentPage(key, label) {
   const page = documentContent.pages[key];
-  const pageVersion = page.version || VERSION;
+  const pageVersion = page.version;
   return '<section class="section"><div class="wrap">' + printBar(label + ' v' + pageVersion) + '<div class="kicker">' + esc(label) + ' · v' + pageVersion + '</div><div class="prose document-body">' + page.html + '</div><p class="source-meta"><a href="' + REPO + '/blob/main/' + esc(page.source) + '" target="_blank" rel="noreferrer">查看本页文档原文 ↗</a></p></div></section>';
 }
-function licenses() { return documentPage('licenses', 'LICENSE SYSTEM'); }
-function verification() { return documentPage('verification', 'EVIDENCE & COLLABORATION'); }
-function versions() { return documentPage('versions', 'VERSION HISTORY'); }
+function versions() {
+  const links = editions.map(e => '<li><a href="#/constitution/' + esc(e.id) + '">' + esc(e.label) + '</a></li>').join('');
+  return documentPage('versions', '版本记录').replace('</h1>', '</h1><ul class="edition-index">' + links + '</ul>');
+}
 function about() {
-  return '<section class="section"><div class="wrap"><div class="kicker">ABOUT</div><h1>项目说明</h1><div class="prose"><p>Open Research Commons 初期服务数学及相关研究，探索人类与 AI 协作的发表、核查和开放贡献制度。当前版本为 v' + VERSION + ' 讨论稿。</p><h2>提案、引用与版本</h2><ul><li>本次正文依据编辑修订稿；历史提案原文和采纳说明附在宪章下方，已调整的解释加删除线。</li><li>外部制度保存短摘录、来源 URL 与条款定位，用于比较参考；第三方材料保留原有权利和许可。</li><li>当前有权授权的原创材料统一采用 MIT，并注明实际版权人、覆盖范围和第三方例外。</li><li>旧版本文件及完整保存分支保留，历史已授许可不会因版本更新而撤销。</li></ul><p><a class="textlink" href="#/constitution">阅读当前宪章 →</a>　<a class="textlink" href="#/versions">版本记录与回退 →</a></p><h2>项目仓库</h2><p><a class="textlink" href="' + REPO + '" target="_blank" rel="noreferrer">knogen/open-research-commons ↗</a></p></div></div></section>';
+  return '<section class="section wrap"><h1>关于开放科研共同体</h1><p>社区面向各学科，支持研究者与智能体参与成果发表、核查及协作。</p><p class="version-links"><a href="#/constitution/latest">基本规则</a><a href="#/versions">历版宪章</a><a href="' + REPO + '">项目仓库</a></p></section>';
 }
 function notFound() { return '<section class="section wrap"><h1>页面不存在</h1><a href="#/">返回首页</a></section>'; }
 function render() {
   const route = location.hash.replace(/^#\/?/, '').split('/');
-  let html, title;
+  let html, title, entry;
   if (!route[0]) { html = home(); title = '开放科研共同体'; }
   else if (route[0] === 'references') { html = route[1] ? sourcePage(route[1]) : references(); title = '制度参考'; }
-  else if (route[0] === 'constitution') { html = constitution(); title = '社区宪章 v' + VERSION; }
-  else if (route[0] === 'licenses') { html = licenses(); title = '许可制度 v' + documentContent.pages.licenses.version; }
-  else if (route[0] === 'verification') { html = verification(); title = '核验与开放协作 v' + VERSION; }
+  else if (route[0] === 'constitution') {
+    const id = !route[1] || route[1] === 'latest' ? latest : route[1];
+    entry = route.length <= 2 && editions.find(e => e.id === id);
+    html = entry ? charterPage(entry) : notFound();
+    title = entry ? entry.label : '版本不存在';
+  }
+  else if (route[0] === 'licenses' && (!route[1] || route[1] === 'v0.3')) {
+    const key = route[1] ? 'licenses/v0.3' : 'licenses';
+    html = documentPage(key, route[1] ? '历史许可目录' : '成果许可');
+    title = '成果许可 v' + documentContent.pages[key].version;
+  }
+  else if (route[0] === 'verification') { html = documentPage('verification', '投稿分类与核查记录'); title = '核查记录 ' + latest; }
   else if (route[0] === 'versions') { html = versions(); title = '版本记录与回退'; }
   else if (route[0] === 'about') { html = about(); title = '项目说明'; }
   else { html = notFound(); title = '页面不存在'; }
   document.getElementById('app').innerHTML = html;
+  if (entry) {
+    document.getElementById('edition-picker').onchange = event => {
+      location.hash = '#/constitution/' + event.target.value;
+    };
+    if (entry.asset && !archivedHtml.has(entry.id)) loadArchive(entry, document.getElementById('edition-content'));
+  }
   document.title = title + ' · Open Research Commons';
   document.querySelector('#nav')?.classList.remove('open');
   document.getElementById('menu').setAttribute('aria-expanded', 'false');
